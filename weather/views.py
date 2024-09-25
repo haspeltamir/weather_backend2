@@ -23,7 +23,8 @@ def get_weather(request):
     longitude = request.data.get('longitude')
     use_current_location = request.data.get('useCurrentLocation')
 
-    api_key = '4d8b13b2dc6b8b1c157b83bad078d92d'
+    api_key = config('WEATHER_API_KEY')
+    # api_key = '4d8b13b2dc6b8b1c157b83bad078d92d'
 
     if use_current_location and latitude and longitude:
         location_key = f"{latitude},{longitude}"
